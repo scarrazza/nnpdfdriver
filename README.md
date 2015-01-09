@@ -1,7 +1,7 @@
 # nnpdfdriver 
 NNPDF stand-alone drivers for C++ and Fortran77 which
 can be easily included in any program. The drivers use as input the
-official LHAPDF5 and LHAPDF6 (c++) grids [lhapdf.hepforge.org/](lhapdf.hepforge.org/).
+official LHAPDF5 and LHAPDF6 (c++) grids at [lhapdf.hepforge.org/](lhapdf.hepforge.org/).
 
 ## Download
 
