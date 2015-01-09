@@ -43,7 +43,7 @@ int main()
   NNPDFDriver *nnpdf = new NNPDFDriver("NNPDF23_nlo_as_0119.LHgrid");
   nnpdf->initPDF(0); // initialize PDF member
  
-  // fast option
+  // or use the fast option: grid name + replica number
   // NNPDFDriver *nnpdf = new NNPDFDriver("NNPDF23_nlo_as_0119.LHgrid", 0);
  
   double x = 0.1, Q = sqrt(2);
