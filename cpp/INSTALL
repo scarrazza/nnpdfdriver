@@ -1,0 +1,7 @@
+INSTALL:
+
+in order to install the driver you just need to compile the
+NNPDFDriver.cc, e.g:
+
+g++ -Wall -O3 -c NNPDFDriver.cc
+

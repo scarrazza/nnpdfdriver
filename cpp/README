@@ -1,0 +1,26 @@
+/***
+ *
+ * NNPDF C++ Driver
+ *
+ * Stefano Carrazza for the NNPDF Collaboration
+ * email: stefano.carrazza@mi.infn.it
+ *
+ * October 2014
+ *
+ * Usage:
+ *
+ *  NNPDFDriver *pdf = new NNPDFDriver("gridname.LHgrid");
+ *
+ *  pdf->initPDF(0); // select replica [0,fMem]
+ *
+ *  or 
+ * 
+ *  NNPDFDriver *pdf = new NNPDFDriver("gridname.LHgrid", 0);
+ *
+ *  then
+ *
+ *  pdf->xfx(x,Q,fl); // -> returns double
+ *
+ *  // with fl = [-6,7], LHAPDF format
+ *
+ */
