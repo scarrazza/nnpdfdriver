@@ -33,8 +33,10 @@ int main(int argc, char** argv)
   // NNPDFDriver *nnpdf = new NNPDFDriver(gridname);
   // nnpdf->initPDF(member);
   
+  bool isLHAPDF6 = false;
 #if LHAPDF_MAJOR_VERSION > 5
   const LHAPDF::PDF*pdf = LHAPDF::mkPDF(gridname, member);
+  isLHAPDF6 = true;
 #define XFS(X,Q,F) pdf->xfxQ(F,X,Q)
 #define XFSPHT(X,Q,F) pdf->xfxQ(F,X,Q)
 #else
@@ -59,7 +61,14 @@ int main(int argc, char** argv)
 	      double a = nnpdf->xfx(xlha[ix],sqrt(Q2[iq]), f);
 	      double b = 0;
 	      if (nnpdf->hasPhoton())
-		b = XFSPHT(xlha[ix],sqrt(Q2[iq]),f);
+		{
+		  if (f == 7 && isLHAPDF6 == true)
+		    {
+		      b = XFSPHT(xlha[ix],sqrt(Q2[iq]),22);		      
+		    }
+		  else
+		    b = XFSPHT(xlha[ix],sqrt(Q2[iq]),f);
+		}
 	      else
 		b = XFS(xlha[ix],sqrt(Q2[iq]),f);
 	      cout << scientific << setprecision(1) << xlha[ix] << "  ";

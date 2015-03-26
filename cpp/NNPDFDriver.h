@@ -47,6 +47,7 @@ class NNPDFDriver {
   int fMem;           //! Total number of Members
   int fRep;           //! Select the current replica
   double fAlphas;     //! AlphaS value
+  double fXMinGrid;   //! Minimum size of the grid
   double *fXGrid;     //! x grid
   double *fLogXGrid;  //! x grid
   vector<double*>     fQ2Grid;    //! q2 grid
@@ -55,8 +56,7 @@ class NNPDFDriver {
   bool fHasPhoton;    //! bool with photon information
   bool fSingleMem;    //! bool which determines the constructor
   bool fLHAPDF6;      //! bool which determines the grid version
-  double *fXpdf;      //! array with doubles
-
+  
  public:
   /// The constructor
   NNPDFDriver(string const& gridfilename = "", int const& rep = -1);
