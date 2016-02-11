@@ -717,3 +717,32 @@ void NNPDFDriver::lh_polint(double xa[], double ya[], int n, double x,
       y+=dy;
     }
 }
+
+
+NNPDFDriver *pdf;
+
+#ifdef __cplusplus
+extern"C" {
+#endif
+
+  void initnnset_(const char* setname)
+  {
+    if (pdf) delete pdf;
+    pdf = new NNPDFDriver(setname);
+  }
+  
+  void initpdf_(int *mem)
+  {
+    if (!pdf) { cout << "initpdf: pdf not allocated" << endl; exit(-1); }
+    pdf->initPDF(*mem);
+  }
+
+  double nnxfx_(double *x, double *Q, int *id)
+  {
+    if (!pdf) { cout << "nnxfx: pdf not allocated" << endl; exit(-1); }
+    return pdf->xfx(*x,*Q,*id);
+  }
+  
+#ifdef __cplusplus
+}
+#endif
