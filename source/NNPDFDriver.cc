@@ -33,7 +33,7 @@
 #include <iterator>
 #include <cmath>
 
-#define NNDriverVersion "1.0.7"
+#define NNDriverVersion "1.0.8"
 
 using namespace std;
 
@@ -719,8 +719,8 @@ void NNPDFDriver::lh_polint(double xa[], double ya[], int n, double x,
 }
 
 
-NNPDFDriver *pdf;
-
+/////// Minimalist fortran wrapper
+NNPDFDriver *pdf = NULL;
 #ifdef __cplusplus
 extern"C" {
 #endif

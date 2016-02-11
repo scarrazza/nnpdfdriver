@@ -55,3 +55,10 @@ int main()
   return 0;
 }
 ```
+
+A minimilist fortran interface is provided
+```C++
+  void initnnset_(const char* setname); // set the PDF name
+  void initpdf_(int *mem); // change member
+  double nnxfx_(double *x, double *Q, int *id); // return x*PDF
+```
